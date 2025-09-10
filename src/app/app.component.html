@@ -1,0 +1,355 @@
+<!-- Day-4 -->
+<div>
+  <p><mark>Day-4 </mark> About Component</p>
+  <h1>
+    hello angular
+  </h1>
+</div>
+<!-- Day-5 project structure  -->
+<p><mark>Day-5</mark> project structure </p>
+<!-- Day-6 Data Binding Demo and string interpolation  binging -->
+<p><mark>Day-6</mark> Data Binding Demo and string interpolation binging</p>
+{{string_interpolation}}
+<!-- Day-7 String interpolation binding -->
+<p><mark>Day-7</mark></p>
+<P>{{20*3 + ' String interpolation Expretion'}} </P>
+
+<div>{{test() }} this is function calling in String interpolation</div>
+<div class="{{cname}}"> <b>{{date}}</b></div>
+<div><b>{{ 'Local Date : ' + localdate }} </b></div>
+
+<diV>
+  <img src="{{imagepath1}}" alt="No image" />
+</diV>
+<diV>
+  <img src="{{imagepath2}}" alt="No image" />
+</diV>
+
+
+<!-- Day-8  property binding -->
+
+<div>
+  <p><mark>Day-8</mark></p>
+  <label>Disabled text box :- </label>
+  <input type="text" [disabled]=isdisabled>
+</div>
+
+<div>
+  <!-- Day - 9 class binding  -->
+  <p><mark>Day-9</mark></p>
+  <h2 [class]='isactive ? "bgc" :"special"'>Class Binding based on 1 condition </h2>
+  <h2 [class]='{bgc : isactive , imp : isimportant }'>Class Binding based on multiple conditions </h2>
+  <h2 [class]="['arryclsone','arryclstwo']">Array of Classes Binding </h2>
+  <h3 [class.bgc]=isactive>Array of Classes Binding </h3>
+  <!-- Day-10  Style binding -->
+  <p><mark>Day-10</mark></p>
+  <h2 [style.background-color]='isactive ? "yellow" :"red"'>style Binding 1 ; based on condition </h2>
+  <h2 [style.background-color]="'gray'">style Binding 2;</h2>
+
+  <P [ngStyle]="mystyle"> style Binding 3 ; from TS variable </P>
+
+  <!-- Day-11  Event Binding -->
+  <div>
+    <p><mark>Day-11</mark></p>
+    <button (click)="increment()">increment</button>
+    <button (click)="decrement()">Decrement</button>
+
+    <h3>Counter :- {{counter}}</h3>
+  </div>
+
+</div>
+<!-- Day-12 Two-way-Binding -->
+<div>
+  <p><mark>Day-12</mark></p>
+  <p>Two-way-Data Binding [(ngModel)]="city"</p>
+  <label>City </label>
+  <input type="text" [(ngModel)]="city" />
+  <p>{{city}}</p>
+
+</div>
+<!-- Day-13  Directives -->
+<div>
+  <p><mark>Day-13</mark></p>
+  <p>Directives</p>
+  <p>ngIf , ngFor , ngSwitch</p>
+
+  <h1 *ngIf="showhide"> ngIf Showing and hiding with directive </h1>
+  <table border="1">
+    <th>ngFor</th>
+    <tr *ngFor="let m of Movies;">
+      <td>{{m}}</td>
+    </tr>
+  </table>
+
+</div>
+<!-- Day-14  ngIf-->
+<div>
+  <p><mark>Day-14</mark></p>
+  <p>ngIf</p>
+  <div *ngIf="!Data then load ; else sample ">
+
+  </div>
+
+</div>
+<ng-template #load>
+  Load Data ...
+</ng-template>
+
+<ng-template #sample>
+  {{Data}}
+</ng-template>
+
+<!-- Day-15 ngFor-->
+<p><mark>Day-15</mark></p>
+<p>ngFor</p>
+<p *ngFor="let m of mobilesArray; index as i ; even as e; odd as o;"> {{i}}-{{m}}</p>
+<table class="border">
+  <th>Mobile Name</th>
+  <th>index</th>
+  <th>even</th>
+  <th>Odd</th>
+  <tr *ngFor="let m of mobilesArray; index as i ; even as e; odd as o;">
+    <td>{{m}}</td>
+    <td>{{i+1}}</td>
+    <td>{{e}}</td>
+    <td>{{o}}</td>
+
+  </tr>
+</table>
+<!-- help  -->
+<p>{{ cleanSpaces(city) }}</p>
+
+
+<!-- Day-16 switch condition -->
+
+<div>
+  <p><mark>Day-16</mark></p>
+  <p>ngSwitch </p>
+  <label for="swop"><b>switch case option (+ , - , * , / ):</b></label>
+
+  <input type="text" [(ngModel)]="op">
+  <div [ngSwitch]="op">
+    <div *ngSwitchCase="'+'">{{num1}} + {{num2}} = {{num1 + num2}}</div>
+    <div *ngSwitchCase="'-'">{{num1}} - {{num2}} = {{num1 - num2}}</div>
+    <div *ngSwitchCase="'*'">{{num1}} * {{num2}} = {{num1 * num2}}</div>
+    <div *ngSwitchCase="'/'">{{num1}} / {{num2}} = {{num1 / num2}}</div>
+    <div *ngSwitchDefault="">Invalid</div>
+  </div>
+
+  <!-- Day-17 Pipes  -->
+  <div>
+    <p><mark>Day-17</mark></p>
+    <p>Pipes </p>
+    <div>
+      <label>Upper Case pipe : - </label>
+      <input type="text" [(ngModel)]="Upperpipe">
+      {{Upperpipe | uppercase }}
+    </div>
+    <div>
+      <label>Lower Case pipe : - </label>
+      <input type="text" [(ngModel)]="Lowerpipe">
+      {{Lowerpipe | lowercase }}
+    </div>
+    <div>
+      <label>Currency pipe :- </label>
+      <input type="text" [(ngModel)]="currencypipe">
+
+      {{currencypipe | currency: 'INR :code'}}
+    </div>
+    <div>
+      <label>Currency pipe :- </label>
+      <input type="text" [(ngModel)]="currencypipe">
+
+      {{currencypipe | currency:'INR'}}
+    </div>
+    <div>
+      <label>Date pipe :- </label>
+      <input type="text" [(ngModel)]="datepipe">
+
+      {{datepipe | date :'dd/MM/yyyy'}}
+    </div>
+    <div>
+      <label>Json pipe :- </label>
+      <!-- <input  type="text" [(ngModel)]="jsonpipe">    -->
+      <!-- <span>{{jsonpipe}}</span> -->
+      {{jsonpipe | json}}
+    </div>
+
+
+  </div>
+  <p><mark>Day-18</mark></p>
+  <p>No information </p>
+  <!-- Day-19  custom pipes -->
+  <div>
+    <p><mark>Day-19</mark></p>
+    <p> custom pipes </p>
+  </div>
+  <!-- Day-20  Template Reference Variable  -->
+  <div>
+    <p><mark>Day-20</mark></p>
+    <p> Template Reference Variable </p>
+    <div #mytemprefvariable>
+      <p> This Div is Template Reference Variable </p>
+
+      <button type="button" class="btn btn-primary" (click)="test2(mytemprefvariable)">Temp Ref Variable</button>
+    </div>
+
+  </div><br>
+  <!-- Day-21  Parent-Child Component  -->
+  <div>
+    <p><mark>Day-21</mark></p>
+    <p> Parent-Child Component </p>
+    <app-header></app-header>
+  </div>
+  <!-- Day-22  Parent-Child Communication  -->
+  <div>
+    <p><mark>Day-22</mark></p>
+    <p> Parent-Child Communication</p>
+    <p>1. <mark> @input Decorator</mark> parent ==> child </p>
+    <p>2. <mark>@Out-Put Decorater</mark> child ==> parent </p>
+    <p>3. <mark>Template Reference Variable</mark> child ==> parent</p>
+    <p>4. <mark>@ViewChild Decorator </mark>child ==> parent</p>
+    <p>5. <mark>Services </mark></p>
+    <app-header [childtitle]="ctitle" [D1]="Data1"></app-header>
+  </div>
+  <!-- Day-23  Parent ==> Child Communication @input deciocorater -->
+  <div>
+    <p><mark>Day-23</mark></p>
+    <p> Parent (To)==>Child Communication <mark>@input</mark> deciocorater</p>
+    <app-header [childtitle]="ctitle" [D1]="Data1"></app-header>
+  </div>
+  <!-- Day-24 child to parent @Out Put Decoretor-->
+  <div>
+    <p><mark>Day-24</mark></p>
+    <p>child to parent <mark> @Out Put Decoretor</mark></p>
+    <p class="text-danger"> <b>{{RecivedchildData}}</b></p>
+    <app-header (customeven)="HandleChildMessage($event)"></app-header>
+  </div>
+  <!-- Day-25 child to parent #Template Reference Variable-->
+  <div>
+    <p><mark>Day-25</mark></p>
+    <p>child to parent <mark> #Template Reference Variable</mark></p>
+    <b> {{childTempRefvar.TempData}}</b>
+    <app-header #childTempRefvar></app-header>
+  </div>
+  <!-- Day-26 child to parent @view-Child-->
+  <div>
+    <p><mark>Day-26</mark></p>
+    <p>child to parent <mark> @view-Child</mark></p>
+    <!-- Access safely only after view initialized -->
+    {{header?.viewchild_data}} <!-- Use optional chaining (?) to avoid early access -->
+  </div>
+  <br>
+  <!-- Day-27  DOM Manipulation-->
+  <div>
+    <p><mark>Day-26</mark></p>
+    <p> DOM</p>
+    <input type="text" #DOMtest>
+    {{Domvalue}}
+  </div>
+  <br>
+  <!-- Day-29  Routing-->
+  <div>
+    <p><mark>Day-29 & 31 - 35</mark></p>
+    <p> Routing</p>
+  </div>
+  <!-- Day-30  Services-->
+
+  <div>
+    <p><mark>Day-30</mark></p>
+    <p> Services</p>
+    <div class="navbar">
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About Us</a>
+      <a routerLink="/contact">Contact Us</a>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+  <!-- Day-36 http Services -->
+  <div>
+    <p><mark>Day-36</mark></p>
+    <p> Http Services </p>
+    <p>https://fakestoreapi.com/products?limit=5</p>
+    <button class="btn btn-primary" (click)="GetData()">Get</button>
+    <table class="table table-striped ">
+      <thead class="table-dark">
+        <tr>
+          <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of data">
+          <td>{{item.id}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.price}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+    <p class="text-danger">Response Stored in Console</p>
+  </div>
+  <!-- Day-38 Observbles -->
+   <div>
+    <p><mark>Day-38</mark></p>
+    <p> Observbles </p>
+
+    <div>
+
+    </div>
+   </div>
+  <!-- Template Driven Forms  -->
+  <div>
+
+    <p><mark>Day- [41 -45]</mark></p>
+    <p> Template Driven Forms</p>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit1(userForm)">
+      <div>
+        <label>Name:</label>
+        <input type="text" name="name" [(ngModel)]="user.name" required />
+      </div>
+
+      <div>
+        <label>Email:</label>
+        <input type="email" name="email" [(ngModel)]="user.email" required />
+      </div>
+
+      <button type="submit" [disabled]="userForm.invalid">Submit</button>
+    </form>
+
+    <p>Name: {{ user.name }}</p>
+    <p>Email: {{ user.email }}</p>
+  </div>
+  <!-- Reactive Forms   -->
+  <div>
+    <p><mark>Day- [46-50]</mark></p>
+    <p> Reactive Forms</p>
+    <form [formGroup]="userForm2" (ngSubmit)="onSubmit2()">
+      <div>
+        <label>Name:</label>
+        <input type="text" formControlName="name" />
+        <div *ngIf="userForm2.get('name')?.invalid && userForm2.get('name')?.touched">
+          <small *ngIf="userForm2.get('name')?.errors?.['required']">Name is required</small>
+          <small *ngIf="userForm2.get('name')?.errors?.['minlength']">Min 3 characters</small>
+        </div>
+      </div>
+
+      <div>
+        <label>Email:</label>
+        <input type="email" formControlName="email" />
+        <div *ngIf="userForm2.get('email')?.invalid && userForm2.get('email')?.touched">
+          <small *ngIf="userForm2.get('email')?.errors?.['required']">Email is required</small>
+          <small *ngIf="userForm2.get('email')?.errors?.['email']">Invalid email</small>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="userForm2.invalid">Submit</button>
+    </form>
+  </div>
+
+
+  <app-header></app-header>
+</div>

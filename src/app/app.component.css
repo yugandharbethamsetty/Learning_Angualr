@@ -1,0 +1,45 @@
+h1{
+    background-color: red;
+
+}
+
+.special {
+  border: 2px, red,solid ; 
+  color: green; 
+}
+.bgc{
+background-color: green;
+}
+.imp{
+  border: 2px, red,solid ; 
+ /* color: rgb(52, 153, 179); */
+}
+.arryclsone{
+ background-color: rgb(0, 2, 128);
+}
+.arryclstwo{
+  border: 2px, red,solid ; 
+ color: white;
+}
+.navbar{
+  display: flex;
+  width: 200px;
+  height: 40px;
+  background-color: #38238e33;
+
+}
+
+
+/* .btn{
+  width: 250px;
+  height: 50px;
+  margin: 4px 2px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 15px;
+  
+}
+.btn-primary {
+color: white;
+background-color: #0d6efd;
+} */
