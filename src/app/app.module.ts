@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { TestService } from './test.service';
 import { HomeComponent } from './home/home.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CustomepipePipe } from './customepipe.pipe';
 
 
 
@@ -19,7 +20,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     AboutComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    CustomepipePipe
   ],
   imports: [
     BrowserModule,

@@ -130,6 +130,9 @@ export class AppComponent {
   // Day-18 No information 
 
   // Day- 19 Custom-Pipes 
+  wish='Hello Good morning';
+  Person={'Name':'Rajamouli','Gender':'M'}
+  whishes='Good Morning';
 
   // Day-20 Temp Ref Variable 
   tempRefValue: any = ''
